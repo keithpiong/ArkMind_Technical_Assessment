@@ -9,11 +9,26 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   background-color: #f7f7f7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Light background color */
+  --background-color: #f7f7f7; 
+  --primary-color: #3b82f6;
+  --secondary-color: #ffffff;
+  --appbar-color: #ffffff;
+  --body-color: #000000;
+}
+
+.dark {
+  --background-color: #1e293b;
+  --primary-color: #3b82f6;
+  --secondary-color: #242424;
+  --appbar-color: #0f172a;
+  --body-color: #ffffff;
 }

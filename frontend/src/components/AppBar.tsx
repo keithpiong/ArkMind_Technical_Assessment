@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const AppBar: React.FC = () => {
 
@@ -18,18 +19,19 @@ const AppBar: React.FC = () => {
   ]
 
   return (
-    <header className="bg-white  p-4 flex justify-between">
-      <h1 className='text-lg font-bold text-black select-none'>Technical Assesment</h1>
-      <div className='flex space-x-6 text-sm cursor-pointer'>
+    <header className="bg-appbar p-4 flex justify-between">
+      <h1 className='text-lg font-bold text-body select-none'>Technical Assesment</h1>
+      <div className='flex space-x-6 text-sm cursor-pointer items-center'>
       {navItems.map((item) => (
           <a
             key={item.route}
-            className="hover:text-black text-slate-500"
+            className="hover:text-accent text-body"
             onClick={() => navigate(item.route)}
           >
             {item.title}
           </a>
         ))}
+        <ThemeToggle/>
       </div>
     </header>
   );

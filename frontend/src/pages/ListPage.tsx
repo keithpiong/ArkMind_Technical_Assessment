@@ -5,12 +5,10 @@ import { Item } from '../types/models';
 import NewItemModal from '../components/NewItemModal';
 import { useNavigate } from 'react-router-dom';
 
-const { Meta } = Card;
-
 const ListPage: React.FC = () => {
 
   const [items, setItems] = useState<Item[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [loading, setLoading] = useState<boolean>(true);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const navigate = useNavigate();
@@ -59,7 +57,8 @@ const ListPage: React.FC = () => {
   return (
     <div className='mx-auto w-full min-h-screen flex flex-col'>
       <div className='flex flex-col w-full max-w-screen-lg mx-auto p-8'>
-        <div className='w-full flex justify-end'>
+        <div className='w-full flex justify-between mb-8'>
+         <h1 className='text-body text-xl font-medium '>Items</h1>
           <Button type="primary" onClick={showModal}>Create</Button>
           <NewItemModal 
             isVisible={isModalVisible} 
@@ -68,7 +67,7 @@ const ListPage: React.FC = () => {
           >
           </NewItemModal>
         </div>
-        <h1 className='text-black text-xl font-medium mb-12'>Items</h1>
+        
         {items.length === 0 ? (
           <div className="text-slate-600">
             <p>No items available. Click the 'Create' button to add items into this list.</p>
@@ -77,14 +76,17 @@ const ListPage: React.FC = () => {
         <div className='grid grid-cols-4 gap-12'>
           {items.map((item) => (
             <Card
+              className='bg-secondary text-body'
+              bordered={false}
               key={item.id}
               hoverable
               style={{ width: 240 }}
               cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
               onClick={() => handleCardClick(item.id)}
             >
-              <Meta title={item.name} description={item.description} />
-              <p className='mt-4'>${item.price}</p>
+              <p className='text-lg font-bold'>{item.name}</p>
+              <p className='mt-6 text-sm tracking-wide'>{item.description}</p>
+              <p className='mt-2 text-sm font-bold'>${item.price}</p>
             </Card>
           ))}
         </div>)}

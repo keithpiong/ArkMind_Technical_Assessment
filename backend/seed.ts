@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -23,7 +23,7 @@ const seedDatabase = () => {
 
   const values = items.map(item => [item.name, item.price, item.description]);
 
-  connection.query(query, [values], (err:any, results:any) => {
+  connection.query(query, [values], (err, results) => {
     if (err) {
       console.error('Error seeding the database:', err);
       connection.end();

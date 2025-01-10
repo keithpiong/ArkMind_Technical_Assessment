@@ -13,9 +13,9 @@ const HomePage: React.FC = () => {
     };
 
   return (
-    <div className='bg-slate-100 mx-auto w-full h-screen'>
+    <div className='bg-background mx-auto w-full h-screen'>
         <div className='flex flex-col justify-center items-center max-w-screen-md mx-auto h-full'>
-            <h1 className='text-5xl font-bold text-blue-800'>Arkminds Technical Assesment</h1>
+            <h1 className='text-5xl font-bold text-body'>Arkminds Technical Assesment</h1>
             <Button className='mt-12' type="primary" onClick={goToItems}>Begin Assestment</Button>
         </div>
     </div>

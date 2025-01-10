@@ -167,7 +167,7 @@ const ItemPage: React.FC = () => {
                   return `$${numericValue.toFixed(2)}`;
                 }}
                 parser={(value) => {
-                  if (!value) return ''; // Handle empty string case
+                  if (!value) return ''; // Handle empty string
                   return parseFloat(value.replace(/[^0-9.]/g, '')) || 0; // Remove all non-numeric characters
                 }}
               />

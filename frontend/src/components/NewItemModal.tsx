@@ -114,7 +114,7 @@ const NewItemModal: React.FC<NewItemModalProps> = ({
           </Form.Item>
 
           <div className='self-end flex'>
-            <Button className='mr-4' type="default" onClick={onCancel}>
+            <Button className='mr-4' type="default" onClick={onCancel} loading={loading}>
               Cancel
             </Button>
             <Button type="primary" htmlType="submit" >
